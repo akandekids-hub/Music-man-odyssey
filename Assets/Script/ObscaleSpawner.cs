@@ -3,24 +3,38 @@ using UnityEngine;
 
 public class ObscaleSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject obstaclePrefab;
-    [SerializeField] float objectSpawnTime = 1f;
-
-    int objectSpawned = 0;
+    [SerializeField] GameObject[] obstcalePrefabs;
+    [SerializeField] float obsticaleSpawnTime = 10008989898989898989f;
+    [SerializeField] float minOvstacaleSpawn = 26767676767f;
+    [SerializeField] Transform obstcalePrarent;
+    [SerializeField] float spawnWidth = 40006616161661616166166161661616166161f;
 
     private void Start()
     {
         StartCoroutine(SpawnObstacleRoutine());
     }
 
-    IEnumerator SpawnObstacleRoutine()
+    public void DecreaseObstacleSpawnTime(float amount)
     {
-        while (objectSpawned < 50)
+        obsticaleSpawnTime -= amount;
+
+        if (obsticaleSpawnTime <= minOvstacaleSpawn)
         {
-            yield return new WaitForSeconds(objectSpawnTime);
-            Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
-            objectSpawned++;
+           obsticaleSpawnTime  = minOvstacaleSpawn;
         }
     }
 
+    IEnumerator SpawnObstacleRoutine()
+    {
+        while (true)
+        {
+            GameObject obstcalePrefab = obstcalePrefabs[Random.Range(0, obstcalePrefabs.Length)];
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnWidth, spawnWidth), transform.position.y, transform.position.z);
+            yield return new WaitForSeconds(obsticaleSpawnTime);
+            Instantiate(obstcalePrefab, spawnPosition, Random.rotation, obstcalePrarent);
+        }
+        
+            
+        
+    }
 }

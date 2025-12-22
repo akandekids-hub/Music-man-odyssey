@@ -861,8 +861,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7ec1655500a7843bf2b3511bb11d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 616509569704521265, guid: cee76f0cf39a9c447af3d6344c81b41a, type: 3}
-  objectSpawnTime: 1
+  obstcalePrefabs:
+  - {fileID: 1992783564072855066, guid: 0e3d71e727c91e241948391623320bf8, type: 3}
+  - {fileID: 7682790789452443922, guid: b67379e095eeba847a8ac1c6fbf10d44, type: 3}
+  - {fileID: 7022988336454335829, guid: 26eeecf8bee56cc4181003223bfdc124, type: 3}
+  - {fileID: 616509569704521265, guid: cee76f0cf39a9c447af3d6344c81b41a, type: 3}
+  obsticaleSpawnTime: 1
+  minOvstacaleSpawn: 2
+  obstcalePrarent: {fileID: 1495579638}
+  spawnWidth: 4
 --- !u!4 &1495579638
 Transform:
   m_ObjectHideFlags: 0
